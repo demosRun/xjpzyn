@@ -1,0 +1,123 @@
+body, html, .page, .page-box {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.owo-animation {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.owo-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.owo-animation-forward {
+  z-index: 99;
+}
+
+img {
+  border: none;
+}
+
+[route-active="false"] {
+  display: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url('../resource/269.jpg');
+}
+
+.so-0 {
+  left: 0px;
+  top: 296px;
+  width: 120px;
+  height: 358px;
+  z-index: 3;
+}
+
+.so-1 {
+  left: 31px;
+  top: 256px;
+  z-index: 2;
+}
+
+.so-2 {
+  left: 29px;
+  top: 141px;
+  z-index: 1;
+}
+
+.so-3 {
+  left: 9px;
+  top: 27px;
+  z-index: 0;
+}
+
+.so-4 {
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+.so-5 {
+  left: 992px;
+  top: 691px;
+  z-index: -2;
+}
+
+.so-6 {
+  left: 893px;
+  top: 775px;
+  z-index: -3;
+}
+
+.so-7 {
+  left: 0px;
+  top: 0px;
+  z-index: -4;
+}
+
+.so-8 {
+  left: 943px;
+  top: 273px;
+  z-index: 0;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
