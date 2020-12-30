@@ -61,7 +61,7 @@ li {
   background-image: url('../resource/269.jpg');
 }
 
-.so-0 {
+.home .so-0 {
   left: 0px;
   top: 296px;
   width: 120px;
@@ -69,55 +69,97 @@ li {
   z-index: 3;
 }
 
-.so-1 {
+.home .so-1 {
   left: 31px;
   top: 256px;
   z-index: 2;
 }
 
-.so-2 {
+.home .so-2 {
   left: 29px;
   top: 141px;
   z-index: 1;
 }
 
-.so-3 {
+.home .so-3 {
   left: 9px;
   top: 27px;
   z-index: 0;
 }
 
-.so-4 {
+.home .so-4 {
   left: 0px;
   top: 0px;
   z-index: -1;
 }
 
-.so-5 {
+.home .so-5 {
   left: 992px;
   top: 691px;
   z-index: -2;
 }
 
-.so-6 {
+.home .so-6 {
   left: 893px;
   top: 775px;
   z-index: -3;
 }
 
-.so-7 {
+.home .so-7 {
   left: 0px;
   top: 0px;
   z-index: -4;
 }
 
-.so-8 {
+.home .so-8 {
   left: 943px;
   top: 273px;
   z-index: 0;
 }
 
-.menu-item {
+.home .menu-item {
   cursor: pointer;
+}
+.page2 .so-0 {
+  left: 0px;
+  top: 0px;
+}
+
+.page2 .so-1 {
+  left: 0px;
+  top: 45px;
+  z-index: 10;
+}
+
+.page2 .so-2 {
+  left: 670px;
+  top: 238px;
+  width: 199px;
+  height: 586px;
+  z-index: 7;
+}
+
+.page2 .so-3 {
+  left: 0px;
+  top: 464px;
+  z-index: 0;
+}
+
+.page2 .so-4 {
+  left: 74px;
+  top: 234px;
+  z-index: 1;
+}
+
+.page2 .so-5 {
+  left: 29px;
+  top: 0px;
+  z-index: 2;
+}
+
+.page2 .so-6 {
+  left: 0px;
+  top: 0px;
+  z-index: 3;
 }
 

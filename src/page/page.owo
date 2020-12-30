@@ -1,7 +1,7 @@
 <template lang="pug">
 .home
   .so.so-0
-    img.so.so-1.menu-item(src="@|277.png|")
+    img.so.so-1.menu-item(src="@|277.png|" go="page2")
     img.so.so-2.menu-item(src="@|275.png|")
     img.so.so-3.menu-item(src="@|276.png|")
     img.so.so-4.menu-item(src="@|278.png|")

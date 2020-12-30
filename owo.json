@@ -90,6 +90,11 @@
 			"name": "page",
 			"src": "./src/page/page.owo",
 			"type": "page"
+		},
+		{
+			"name": "page2",
+			"src": "/src/page/page2.owo",
+			"type": "page"
 		}
 	],
 	"mode": {
