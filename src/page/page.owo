@@ -5,7 +5,7 @@
     img.so.so-2.menu-item(src="@|275.png|")
     img.so.so-3.menu-item(src="@|276.png|")
     img.so.so-4.menu-item(src="@|278.png|")
-  .rotate-box
+  .scale-box
     img.so.so-5(src="@|274.png|")
     img.so.so-6(src="@|273.png|")
     img.so.so-7(src="@|272.png|")

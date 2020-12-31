@@ -128,7 +128,12 @@ li {
 .page2 .so-1 {
   left: 0px;
   top: 45px;
-  z-index: 10;
+  z-index: 6;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .page2 .so-2 {
@@ -139,27 +144,65 @@ li {
   z-index: 7;
 }
 
+.page2 .menu-item {
+  width: 160px;
+  height: 160px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 .page2 .so-3 {
-  left: 0px;
-  top: 464px;
+  left: -18px;
+  top: 443px;
   z-index: 0;
+  background-image: url('../resource/reci.png');
+}
+
+.page2 .so-3.active {
+  background-image: url('../resource/reci-active.png');
 }
 
 .page2 .so-4 {
-  left: 74px;
-  top: 234px;
+  left: 61px;
+  top: 214px;
   z-index: 1;
+  background-image: url('../resource/tujie.png');
+}
+
+.page2 .so-4.active {
+  background-image: url('../resource/tujie-active.png');
 }
 
 .page2 .so-5 {
-  left: 29px;
-  top: 0px;
+  left: 32px;
+  top: -18px;
   z-index: 2;
+  background-image: url('../resource/shuju.png');
+}
+
+.page2 .so-5.active {
+  background-image: url('../resource/shuju-active.png');
 }
 
 .page2 .so-6 {
   left: 0px;
   top: 0px;
   z-index: 3;
+}
+
+.page2 {
+  overflow: hidden;
+  height: 100%;
+  background-image: url('../resource/556.jpg');
+  background-size: cover;
+}
+
+.page2 .back {
+  z-index: 9;
+  position: absolute;
+  left: 2%;
+  top: 11%;
+  cursor: pointer;
 }
 

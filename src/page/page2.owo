@@ -1,16 +1,39 @@
 <template lang="pug">
 .page2
-  img.so.so-0(src="@|556.jpg|")
-  img.so.so-1(src="@|555.png|")
-  .so.so-2
-    img.so.so-3(src="@|552.png|")
-    img.so.so-4(src="@|553.png|")
-    img.so.so-5(src="@|554.png|")
-  img.so.so-6(src="@|550.png|")
+  .scale-w
+    //- 返回按钮
+    img.back(src="@|back.png|" go="page")
+    img.so.so-1(src="@|555.png|")
+    .so.so-2
+      .menu-item.so.so-3.active(o-tap="changeReci()")
+      .menu-item.so.so-4(o-tap="changeTujie()")
+      .menu-item.so.so-5(o-tap="changeShuju()")
+    img.so.so-6(src="@|550.png|")
 
 </template>
 <script>
 module.exports = {
+  clear: function () {
+    console.log('清理')
+    this.queryAll('.menu-item').forEach(element => {
+      element.classList.remove('active')
+    });
+  },
+  changeReci: function (e) {
+    this.clear()
+    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-3.png|')
+    this.$target.classList.add('active')
+  },
+  changeTujie: function (e) {
+    this.clear()
+    this.$target.classList.add('active')
+    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-2.png|')
+  },
+  changeShuju: function (e) {
+    this.clear()
+    this.$target.classList.add('active')
+    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550.png|')
+  }
 }
 </script>
 <style lang="less">
@@ -21,7 +44,9 @@ module.exports = {
 .so-1 {
   left: 0px;
   top: 45px;
-  z-index: 10;
+  z-index: 6;
+  user-select: none;
+  pointer-events: none;
 }
 .so-2 {
   left: 670px;
@@ -30,24 +55,56 @@ module.exports = {
   height: 586px;
   z-index: 7;
 }
+.menu-item {
+  width: 160px;
+  height: 160px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
 .so-3 {
-  left: 0px;
-  top: 464px;
+  left: -18px;
+  top: 443px;
   z-index: 0;
+  background-image: url('@|reci.png|');
+}
+.so-3.active {
+  background-image: url('@|reci-active.png|');
 }
 .so-4 {
-  left: 74px;
-  top: 234px;
+  left: 61px;
+  top: 214px;
   z-index: 1;
+  background-image: url('@|tujie.png|');
+}
+.so-4.active {
+  background-image: url('@|tujie-active.png|');
 }
 .so-5 {
-  left: 29px;
-  top: 0px;
+  left: 32px;
+  top: -18px;
   z-index: 2;
+  background-image: url('@|shuju.png|');
+}
+.so-5.active {
+  background-image: url('@|shuju-active.png|');
 }
 .so-6 {
   left: 0px;
   top: 0px;
   z-index: 3;
+}
+.page2 {
+  overflow: hidden;
+  height: 100%;
+  background-image: url('@|556.jpg|');
+  background-size: cover;
+}
+.back {
+  z-index: 9;
+  position: absolute;
+  left: 2%;
+  top: 11%;
+  cursor: pointer;
 }
 </style>

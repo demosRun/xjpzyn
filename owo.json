@@ -72,6 +72,11 @@
 		{
 			"name": "autoScale",
 			"src": "./owo_modules/autoScale.js"
+		},
+		{
+			"name": "fadeChangeImage",
+			"afterbody": true,
+			"src": "./owo_modules/fadeChangeImage.js"
 		}
 	],
 	"styleList": [

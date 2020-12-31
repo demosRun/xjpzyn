@@ -177,6 +177,20 @@ function getScale () {
       }
       break
     }
+    // 强制宽100%缩放
+    case 'scale-w': {
+      var scale = autoScaleInfo.innerWidth / autoScaleInfo.deviseW
+      console.log(scale)
+      var translateValue = (autoScaleInfo.innerHeight - (autoScaleInfo.deviseH * scale)) / 2
+      for (var index = 0; index < boxList.length; index++) {
+        var scaleBox = boxList[index];
+        scaleBox.style.transform = 'scale(' + scale + ', ' + scale + ') translate(0, ' + translateValue / scale + 'px)'
+        scaleBox.style.height = autoScaleInfo.deviseH + 'px'
+        scaleBox.style.width = autoScaleInfo.deviseW + 'px'
+        scaleBox.style.transformOrigin = '0px 0px 0px'
+      }
+      break
+    }
     case 'roll': {
       for (var index = 0; index < boxList.length; index++) {
         var scaleBox = boxList[index];
