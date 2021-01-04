@@ -226,3 +226,15 @@ li {
   display: none;
 }
 
+.page2 .reci-box {
+  display: block;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: -24%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+

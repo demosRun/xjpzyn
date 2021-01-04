@@ -13,6 +13,35 @@
       #chart
       img(src="@|shuju-zhou.png|")
     .reci-box.show-box
+      .reci-item-box
+        li
+          span 只争朝夕 不负韶华
+        li
+          span 人民至上
+        li
+          span 听党指挥跟党走
+        li
+          span 坚定不移听党话 矢志不渝跟党走
+        li
+          span 集中力量办好自己的事
+        li
+          span 光荣属于劳动者 幸福属于劳动者
+        li
+          span 勇当新时代的“拓荒牛”
+        li
+          span 钉钉子精神
+        li
+          span 学以养德 学以增智 学以致用
+        li
+          span 守土有责 守土担责 守土尽责
+        li
+          span 当好人民群众贴心人
+        li
+          span 绿水青山就是金山银山
+        li
+          span 初心如磐 使命在肩
+        li
+          span 厉行节约 反对浪费
     .tujie-box.show-box
 </template>
 <script>
@@ -88,7 +117,10 @@ module.exports = {
       };
 
       // 使用刚指定的配置项和数据显示图表。
-      this.data.chart.setOption(option);
+      setTimeout(() => {
+        this.data.chart.setOption(option);
+      }, 600);
+      
       // 默认高亮
       let index = 0; // 高亮索引
       // this.data.chart.dispatchAction({
@@ -204,5 +236,16 @@ module.exports = {
 }
 .show-box {
   display: none;
+}
+.reci-box {
+  display: block;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: -24%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 </style>
