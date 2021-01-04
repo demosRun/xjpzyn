@@ -240,12 +240,18 @@ module.exports = {
 .reci-box {
   display: block;
   width: 400px;
-  height: 400px;
+  height: 850px;
   position: absolute;
   left: 0;
   right: -24%;
   top: 0;
   bottom: 0;
   margin: auto;
+  li {
+    color: #2f598b;
+    line-height: 60px;
+    font-size: 26px;
+    text-align: center;
+  }
 }
 </style>
