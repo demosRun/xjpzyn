@@ -206,3 +206,23 @@ li {
   cursor: pointer;
 }
 
+.page2 .shuju-box {
+  width: 935px;
+  height: 716px;
+  position: absolute;
+  right: 3%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.page2 .shuju-box #chart {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 50px;
+}
+
+.page2 .show-box {
+  display: none;
+}
+

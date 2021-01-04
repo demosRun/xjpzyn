@@ -1,9 +1,9 @@
 <template lang="pug">
 .home
   .so.so-0
-    img.so.so-1.menu-item(src="@|277.png|" go="page2")
-    img.so.so-2.menu-item(src="@|275.png|")
-    img.so.so-3.menu-item(src="@|276.png|")
+    img.so.so-1.menu-item(src="@|277.png|" o-tap="changePage(2)")
+    img.so.so-2.menu-item(src="@|275.png|" o-tap="changePage(1)")
+    img.so.so-3.menu-item(src="@|276.png|" o-tap="changePage(0)")
     img.so.so-4.menu-item(src="@|278.png|")
   .scale-box
     img.so.so-5(src="@|274.png|")
@@ -15,7 +15,23 @@
 
 <script>
   module.exports = {
-
+    changePage: function (index) {
+      index = parseInt(index)
+      switch (index) {
+        case 0:
+          owo.script.page2.changeShuju()
+          break;
+        case 1:
+          owo.script.page2.changeTujie()
+          break;
+        case 2:
+          owo.script.page2.changeReci()
+          break;
+        default:
+          break;
+      }
+      owo.go('page2')
+    }
   }
 </script>
 

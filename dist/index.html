@@ -22,48 +22,184 @@
       
     <!-- 附属css文件 -->
     <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-    <link rel="stylesheet" href="https://cunchu.site/owo/style/idangerous.swiper2.7.6.css" charset="utf-8">
       
   </head>
   <body>
     
     <!-- 页面[page]-->
-    <div class="home page" template="page" style="display: none;"><div class="so so-0"><img class="so so-1 menu-item" src="./static/resource/277.png" go="page2"><img class="so so-2 menu-item" src="./static/resource/275.png"><img class="so so-3 menu-item" src="./static/resource/276.png"><img class="so so-4 menu-item" src="./static/resource/278.png"></div><div class="scale-box"><img class="so so-5" src="./static/resource/274.png"><img class="so so-6" src="./static/resource/273.png"><img class="so so-7" src="./static/resource/272.png"><img class="so so-8" src="./static/resource/270.png"></div></div>
+    <div class="home page" template="page" style="display: none;"><div class="so so-0"><img class="so so-1 menu-item" src="./static/resource/277.png" o-tap="changePage(2)"><img class="so so-2 menu-item" src="./static/resource/275.png" o-tap="changePage(1)"><img class="so so-3 menu-item" src="./static/resource/276.png" o-tap="changePage(0)"><img class="so so-4 menu-item" src="./static/resource/278.png"></div><div class="scale-box"><img class="so so-5" src="./static/resource/274.png"><img class="so so-6" src="./static/resource/273.png"><img class="so so-7" src="./static/resource/272.png"><img class="so so-8" src="./static/resource/270.png"></div></div>
     <!-- 页面[page2]-->
-    <div class="page2 page" template="page2" style="display: none;"><div class="scale-w"><img class="back" src="./static/resource/back.png" go="page"><img class="so so-1" src="./static/resource/555.png"><div class="so so-2"><div class="menu-item so so-3 active" o-tap="changeReci()"></div><div class="menu-item so so-4" o-tap="changeTujie()"></div><div class="menu-item so so-5" o-tap="changeShuju()"></div></div><img class="so so-6" src="./static/resource/550.png"></div></div>
+    <div class="page2 page" template="page2" style="display: none;"><div class="scale-w"><img class="back" src="./static/resource/back.png" go="page"><img class="so so-1" src="./static/resource/555.png"><div class="so so-2"><div class="menu-item so so-3 active" o-tap="changeReci()"></div><div class="menu-item so so-4" o-tap="changeTujie()"></div><div class="menu-item so so-5" o-tap="changeShuju()"></div></div><img class="so so-6" src="./static/resource/550.png"><div class="shuju-box show-box"><div id="chart"></div><img src="./static/resource/shuju-zhou.png"></div><div class="reci-box show-box"></div><div class="tujie-box show-box"></div></div></div>
     
 <!-- 框架script文件 -->
 <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
 <script type="text/javascript" charset="UTF-8">
 owo.script = {
-  "page": {},
+  "page": {
+    "changePage": function changePage(index) {
+      index = parseInt(index);
+
+      switch (index) {
+        case 0:
+          owo.script.page2.changeShuju();
+          break;
+
+        case 1:
+          owo.script.page2.changeTujie();
+          break;
+
+        case 2:
+          owo.script.page2.changeReci();
+          break;
+
+        default:
+          break;
+      }
+
+      owo.go('page2');
+    }
+  },
   "page2": {
+    "data": {
+      "chart": null
+    },
     "clear": function clear() {
       console.log('清理');
       this.queryAll('.menu-item').forEach(function (element) {
         element.classList.remove('active');
       });
+      this.queryAll('.show-box').forEach(function (element) {
+        element.style.display = 'none';
+      });
     },
     "changeReci": function changeReci(e) {
       this.clear();
       owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550-3.png');
-      this.$target.classList.add('active');
+      this.query('.so-3').classList.add('active');
+      this.query('.reci-box').style.display = 'block';
     },
     "changeTujie": function changeTujie(e) {
       this.clear();
-      this.$target.classList.add('active');
+      this.query('.so-4').classList.add('active');
       owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550-2.png');
+      this.query('.tujie-box').style.display = 'block';
     },
     "changeShuju": function changeShuju(e) {
       this.clear();
-      this.$target.classList.add('active');
+      this.query('.so-5').classList.add('active');
       owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550.png');
+      this.query('.shuju-box').style.display = 'block';
+
+      if (!this.data.chart) {
+        this.data.chart = echarts.init(document.getElementById('chart'));
+        var option = {
+          tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+          },
+          series: [{
+            name: '访问来源',
+            type: 'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: '30',
+                fontWeight: 'bold'
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: [{
+              value: 335,
+              name: '中央政治局会议',
+              itemStyle: {
+                color: '#b7e0cb'
+              }
+            }, {
+              value: 310,
+              name: '2020年习近平考察调研过这些地方',
+              itemStyle: {
+                color: '#5abad1'
+              }
+            }, {
+              value: 234,
+              name: '2020年中央全面深化改革委员会会议探讨这些大事',
+              itemStyle: {
+                color: '#3984b6'
+              }
+            }, {
+              value: 135,
+              name: '瞄准“十四五”2020年习近平召开这些座谈会问计于民',
+              itemStyle: {
+                color: '#264992'
+              }
+            }, {
+              value: 1548,
+              name: '2020年中央财经委员会会议',
+              itemStyle: {
+                color: '#172063'
+              }
+            }, {
+              value: 1548,
+              name: '2020年党外人士座谈会谈过哪些重要内容',
+              itemStyle: {
+                color: '#dfeece'
+              }
+            }, {
+              value: 1548,
+              name: '2020年习近平指示批示这些重要事件',
+              itemStyle: {
+                color: '#95d3d3'
+              }
+            }, {
+              value: 1548,
+              name: '2020年习近平给这些人回过信',
+              itemStyle: {
+                color: '#469dc5'
+              }
+            }]
+          }]
+        }; // 使用刚指定的配置项和数据显示图表。
+
+        this.data.chart.setOption(option); // 默认高亮
+
+        var index = 0; // 高亮索引
+        // this.data.chart.dispatchAction({
+        //   type: "highlight",
+        //   seriesIndex: index,
+        //   dataIndex: index
+        // });
+        // this.data.chart.on("mouseover", function(e) {
+        //   if (e.dataIndex != index) {
+        //     this.data.chart.dispatchAction({
+        //       type: "downplay",
+        //       seriesIndex: 0,
+        //       dataIndex: index
+        //     });
+        //   }
+        // });
+        // this.data.chart.on("mouseout", function(e) {
+        //   index = e.dataIndex;
+        //   this.data.chart.dispatchAction({
+        //     type: "highlight",
+        //     seriesIndex: 0,
+        //     dataIndex: e.dataIndex
+        //   });
+        // });
+      }
     }
   }
 };
 </script>
 
-    <script src="https://cunchu.site/owo/script/idangerous.swiper2.7.6.min.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/echarts.min.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
 
