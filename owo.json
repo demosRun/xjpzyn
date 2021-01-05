@@ -96,6 +96,11 @@
 			"name": "page2",
 			"src": "/src/page/page2.owo",
 			"type": "page"
+		},
+		{
+			"name": "showAni",
+			"src": "/src/page/showAni.owo",
+			"type": "block"
 		}
 	],
 	"mode": {

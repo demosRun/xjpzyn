@@ -30,7 +30,11 @@
         default:
           break;
       }
-      owo.go('page2')
+      document.querySelector('.show-ani').classList.add('page-ani')
+      setTimeout(() => {
+        owo.go('page2')
+      }, 600);
+      
     }
   }
 </script>

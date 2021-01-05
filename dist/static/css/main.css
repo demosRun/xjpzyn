@@ -90,3 +90,36 @@ h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, bu
 .so {
   position: absolute;
 }
+
+@keyframes pageAni {
+  0%{
+    transform: rotate(0deg);
+    opacity: 1;
+    width: 50px;
+    height: 50px;
+  }
+  50%{
+    transform: rotate(0deg);
+    opacity: 1;
+    width: 4000px;
+    height: 4000px;
+  }
+  80%{
+    transform: rotate(0deg);
+    opacity: 1;
+    width: 500px;
+    height: 500px;
+  }
+  100%{
+    transform: rotate(0deg);
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+
+.page-ani {
+  animation: pageAni 2s infinite 0s linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}

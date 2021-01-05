@@ -30,6 +30,8 @@
     <div class="home page" template="page" style="display: none;"><div class="so so-0"><img class="so so-1 menu-item" src="./static/resource/277.png" o-tap="changePage(2)"><img class="so so-2 menu-item" src="./static/resource/275.png" o-tap="changePage(1)"><img class="so so-3 menu-item" src="./static/resource/276.png" o-tap="changePage(0)"><img class="so so-4 menu-item" src="./static/resource/278.png"></div><div class="scale-box"><img class="so so-5" src="./static/resource/274.png"><img class="so so-6" src="./static/resource/273.png"><img class="so so-7" src="./static/resource/272.png"><img class="so so-8" src="./static/resource/270.png"></div></div>
     <!-- 页面[page2]-->
     <div class="page2 page" template="page2" style="display: none;"><div class="scale-w"><img class="back" src="./static/resource/back.png" go="page"><img class="so so-1" src="./static/resource/555.png"><div class="so so-2"><div class="menu-item so so-3 active" o-tap="changeReci()"></div><div class="menu-item so so-4" o-tap="changeTujie()"></div><div class="menu-item so so-5" o-tap="changeShuju()"></div></div><img class="so so-6" src="./static/resource/550.png"><div class="shuju-box show-box"><div id="chart"></div><img src="./static/resource/shuju-zhou.png"></div><div class="reci-box show-box"><div class="reci-item-box"><li><span>只争朝夕 不负韶华</span></li><li><span>人民至上</span></li><li><span>听党指挥跟党走</span></li><li><span>坚定不移听党话 矢志不渝跟党走</span></li><li><span>集中力量办好自己的事</span></li><li><span>光荣属于劳动者 幸福属于劳动者</span></li><li><span>勇当新时代的“拓荒牛”</span></li><li><span>钉钉子精神</span></li><li><span>学以养德 学以增智 学以致用</span></li><li><span>守土有责 守土担责 守土尽责</span></li><li><span>当好人民群众贴心人</span></li><li><span>绿水青山就是金山银山</span></li><li><span>初心如磐 使命在肩</span></li><li><span>厉行节约 反对浪费</span></li></div></div><div class="tujie-box show-box"></div></div></div>
+    <!-- 插件[showAni]-->
+    <div class="show-ani owo-block" template="showAni" style="display: none;"></div>
     
 <!-- 框架script文件 -->
 <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
@@ -56,7 +58,10 @@ owo.script = {
           break;
       }
 
-      owo.go('page2');
+      document.querySelector('.show-ani').classList.add('page-ani');
+      setTimeout(function () {
+        owo.go('page2');
+      }, 600);
     }
   },
   "page2": {
@@ -199,7 +204,8 @@ owo.script = {
         // });
       }
     }
-  }
+  },
+  "showAni": {}
 };
 </script>
 
