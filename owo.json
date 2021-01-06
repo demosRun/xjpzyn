@@ -3,7 +3,7 @@
 	"root": "/src",
 	"scheme": [],
 	"outFolder": "./dist",
-	"container": "",
+	"container": "rotate",
 	"resourceFolder": "./src/resource",
 	"headList": [
 		{
@@ -12,7 +12,7 @@
 		},
 		{
 			"name": "viewport",
-			"content": "width=1000, user-scalable=yes"
+			"content": "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
 		},
 		{
 			"name": "format-detection",
@@ -77,6 +77,14 @@
 			"name": "fadeChangeImage",
 			"afterbody": true,
 			"src": "./owo_modules/fadeChangeImage.js"
+		},
+		{
+			"name": "gsap-latest-beta.min",
+			"src": "./src/gsap-latest-beta.min.js"
+		},
+		{
+			"name": "idangerous.swiper2.7.6.min",
+			"src": "https://cunchu.site/owo/script/idangerous.swiper2.7.6.min.js"
 		}
 	],
 	"styleList": [
@@ -84,6 +92,10 @@
 			"name": "main",
 			"src": "./src/main.css",
 			"resource": true
+		},
+		{
+			"name": "idangerous.swiper2.7.6",
+			"src": "https://cunchu.site/owo/style/idangerous.swiper2.7.6.css"
 		}
 	],
 	"pageList": [

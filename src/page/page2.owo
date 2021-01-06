@@ -9,10 +9,15 @@
       .menu-item.so.so-4(o-tap="changeTujie()")
       .menu-item.so.so-5(o-tap="changeShuju()")
     img.so.so-6(src="@|550.png|")
+    .biaoqing-show
+      img.biaoqing(src="@|biaoqing.png|")
+      img.tuoyuan(src="@|tuoyuan.png|")
     .shuju-box.show-box
       #chart
       img(src="@|shuju-zhou.png|")
     .reci-box.show-box
+      //- .cursor
+      .shape
       .reci-item-box
         li
           span 只争朝夕 不负韶华
@@ -43,11 +48,56 @@
         li
           span 厉行节约 反对浪费
     .tujie-box.show-box
+      .left-button.button(o-tap="prev")
+        <svg t="1609918008631" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2694" width="40" height="40"><path d="M621.24800001 877.248l320-320c24.992051-24.992051 24.992051-65.504051 0-90.496l-320-320c-24.992051-24.992051-65.504051-24.992051-90.496 0-24.992051 24.992051-24.992051 65.504051 0 90.496l210.75199999 210.75199999-613.504 1e-8c-35.36005101 0-64 28.640051-64 64 0 35.36005101 28.640051 64 64 64l613.504 1e-8-210.75199999 210.75199999c-12.48 12.512051-18.752 28.864-18.75200001 45.248s6.240051 32.768 18.75200001 45.248c24.992051 24.992051 65.504051 24.992051 90.496 0z" p-id="2695"></path></svg>
+      .right-button.button(o-tap="next")
+        <svg t="1609918008631" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2694" width="40" height="40"><path d="M621.24800001 877.248l320-320c24.992051-24.992051 24.992051-65.504051 0-90.496l-320-320c-24.992051-24.992051-65.504051-24.992051-90.496 0-24.992051 24.992051-24.992051 65.504051 0 90.496l210.75199999 210.75199999-613.504 1e-8c-35.36005101 0-64 28.640051-64 64 0 35.36005101 28.640051 64 64 64l613.504 1e-8-210.75199999 210.75199999c-12.48 12.512051-18.752 28.864-18.75200001 45.248s6.240051 32.768 18.75200001 45.248c24.992051 24.992051 65.504051 24.992051 90.496 0z" p-id="2695"></path></svg>
+      .swiper-container
+        .swiper-wrapper.clear
+          .swiper-slide.clear
+            .left.fl
+              a(href="#")
+                img.show-card(src="@|show-card.png|")
+            .right.fr
+              h1 习近平<br>对第一书记的嘱咐与牵挂
+              .line
+              .text-box
+                p 2020年是极不寻常的一年，以习近平同志为核心的党中央团结带领全国各族人民战疫情、抗洪峰，化危机、应变局，经受风雨洗礼，新中国站上新的时间节点。
+                p 回望这一年，习近平总书记夙夜在公，不辞劳苦，统筹国内国际两个大局，谋大局、抓重点，观大势、定大计，察民情、促民生。人民网·中国共产党新闻网推出年终报道，为您梳理习近平总书记的这一年。
+              .button
+                a(href="#") 查看图解
 </template>
 <script>
 module.exports = {
   data: {
-    chart: null
+    chart: null,
+    mySwiper: null
+  },
+  created: function () {
+    const reciList = this.queryAll('.reci-item-box li')
+    reciList.forEach(element => {
+      element.onmouseenter = function () {
+        reciList.forEach(element => {
+          element.classList.remove('active')
+        });
+        this.classList.add('active')
+      }
+    });
+    document.querySelector('.reci-item-box').addEventListener("mousemove", evt => {
+      const mouseX = evt.clientX;
+      const mouseY = evt.clientY;
+    
+      // gsap.set(".cursor", {
+      //   x: mouseX,
+      //   y: mouseY });
+    
+    
+      gsap.to(".shape", {
+        x: (mouseX - (autoScaleInfo.innerWidth * 0.55))  / autoScaleInfo.scale ,
+        y: (mouseY - (autoScaleInfo.innerHeight * 0.13)) / autoScaleInfo.scale ,
+        stagger: -0.1 });
+    
+    });
   },
   clear: function () {
     console.log('清理')
@@ -60,66 +110,78 @@ module.exports = {
   },
   changeReci: function (e) {
     this.clear()
-    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-3.png|')
+    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-2.png|')
     this.query('.so-3').classList.add('active')
     this.query('.reci-box').style.display = 'block'
+    this.query('.biaoqing-show').style.display = 'block'
   },
   changeTujie: function (e) {
     this.clear()
     this.query('.so-4').classList.add('active')
-    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-2.png|')
+    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550.png|')
     this.query('.tujie-box').style.display = 'block'
+    this.query('.biaoqing-show').style.display = 'none'
+    if (!this.data.mySwiper) {
+      this.data.mySwiper = new Swiper('.swiper-container',{
+        loop: true
+        //其他设置
+      });
+    }
+  },
+  next: function () {
+    this.data.mySwiper.swipeNext()
+  },
+  prev: function () {
+    this.data.mySwiper.swipePrev()
   },
   changeShuju: function (e) {
     this.clear()
     this.query('.so-5').classList.add('active')
-    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550.png|')
+    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-3.png|')
     this.query('.shuju-box').style.display = 'block'
+    this.query('.biaoqing-show').style.display = 'none'
     if (!this.data.chart) {
-      this.data.chart = echarts.init(document.getElementById('chart'))
-      var option = {
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b}: {c} ({d}%)'
-        },
-        series: [
-          {
-            name: '访问来源',
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              show: false,
-              position: 'center'
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: '30',
-                fontWeight: 'bold'
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            data: [
-              {value: 335, name: '中央政治局会议', itemStyle: {color: '#b7e0cb'}},
-              {value: 310, name: '2020年习近平考察调研过这些地方', itemStyle: {color: '#5abad1'}},
-              {value: 234, name: '2020年中央全面深化改革委员会会议探讨这些大事', itemStyle: {color: '#3984b6'}},
-              {value: 135, name: '瞄准“十四五”2020年习近平召开这些座谈会问计于民', itemStyle: {color: '#264992'}},
-              {value: 1548, name: '2020年中央财经委员会会议', itemStyle: {color: '#172063'}},
-              {value: 1548, name: '2020年党外人士座谈会谈过哪些重要内容', itemStyle: {color: '#dfeece'}},
-              {value: 1548, name: '2020年习近平指示批示这些重要事件', itemStyle: {color: '#95d3d3'}},
-              {value: 1548, name: '2020年习近平给这些人回过信', itemStyle: {color: '#469dc5'}},
-            ]
-          }
-        ]
-      };
+      
 
       // 使用刚指定的配置项和数据显示图表。
       setTimeout(() => {
+        this.data.chart = echarts.init(document.getElementById('chart'))
+        var option = {
+          series: [
+            {
+              name: '访问来源',
+              type: 'pie',
+              radius: ['50%', '70%'],
+              avoidLabelOverlap: false,
+              label: {
+                show: false,
+                position: 'center'
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: '30',
+                  fontWeight: 'bold'
+                }
+              },
+              labelLine: {
+                show: false
+              },
+              data: [
+                {value: 335, name: '中央政治局会议', itemStyle: {color: '#b7e0cb'}},
+                {value: 310, name: '2020年习近平考察调研过这些地方', itemStyle: {color: '#5abad1'}},
+                {value: 234, name: '2020年中央全面深化改革委员会会议探讨这些大事', itemStyle: {color: '#3984b6'}},
+                {value: 135, name: '瞄准“十四五”2020年习近平召开这些座谈会问计于民', itemStyle: {color: '#264992'}},
+                {value: 1548, name: '2020年中央财经委员会会议', itemStyle: {color: '#172063'}},
+                {value: 1548, name: '2020年党外人士座谈会谈过哪些重要内容', itemStyle: {color: '#dfeece'}},
+                {value: 1548, name: '2020年习近平指示批示这些重要事件', itemStyle: {color: '#95d3d3'}},
+                {value: 1548, name: '2020年习近平给这些人回过信', itemStyle: {color: '#469dc5'}},
+              ]
+            }
+          ]
+        };
         this.data.chart.setOption(option);
-      }, 600);
+      }, 1000);
       
       // 默认高亮
       let index = 0; // 高亮索引
@@ -242,16 +304,116 @@ module.exports = {
   width: 400px;
   height: 850px;
   position: absolute;
-  left: 0;
-  right: -24%;
+  left: 1000px;
   top: 0;
   bottom: 0;
   margin: auto;
+  z-index: 9;
   li {
     color: #2f598b;
     line-height: 60px;
     font-size: 26px;
     text-align: center;
+    transition: all 0.3s;
+  }
+  li.active {
+    font-weight: bold;
+    font-size: 28px;
+  }
+}
+.reci-item-box {
+  mix-blend-mode: color-dodge;
+  cursor: none;
+}
+.tujie-box {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  left: 1000px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 9;
+  .left-button {
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    transform:rotate(180deg);
+    fill: #c9cacb;
+    cursor: pointer;
+    z-index: 99;
+  }
+  .right-button {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    fill: #c9cacb;
+    cursor: pointer;
+    z-index: 99;
+  }
+  .button:hover svg {
+    fill: #084d98;
+  }
+}
+.swiper-wrapper {
+  a {
+    display: block;
+  }
+  .left {
+    width: 308px;
+    img {
+      display: block;
+    }
+  }
+  .right {
+    width: 400px;
+  }
+}
+.swiper-slide {
+  width: 100%;
+  .right {
+    h1 {
+      color: #091e40;
+      font-size: 28px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    .line {
+      height: 4px;
+      width: 60px;
+      background-color: #3984f3;
+      margin-bottom: 20px;
+    }
+    .text-box {
+      font-size: 18px;
+      line-height: 26px;
+      text-indent: 2em;
+      p {
+        margin-bottom: 5px;
+      }
+    }
+    .button {
+      background-color: #084d98;
+      color: white;
+      width: 100px;
+      text-align: center;
+      line-height: 40px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 3px;
+      a {
+        display: block;
+        color: white;
+      }
+    }
   }
 }
 </style>

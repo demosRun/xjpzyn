@@ -8,8 +8,14 @@ function getScale () {
   document.body.style.opacity = 0
   var boxList = document.querySelectorAll(autoScaleInfo.box)
   
-  autoScaleInfo.innerWidth = window.innerWidth
-  autoScaleInfo.innerHeight = window.innerHeight
+  
+  if (autoScaleInfo.rotate) {
+    autoScaleInfo.innerWidth = window.innerHeight
+    autoScaleInfo.innerHeight = window.innerWidth
+  } else {
+    autoScaleInfo.innerWidth = window.innerWidth
+    autoScaleInfo.innerHeight = window.innerHeight
+  }
   switch (autoScaleInfo.type) {
     case 'scale': {
       // 没有设置缩放中心默认为中间
@@ -180,6 +186,7 @@ function getScale () {
     // 强制宽100%缩放
     case 'scale-w': {
       var scale = autoScaleInfo.innerWidth / autoScaleInfo.deviseW
+      autoScaleInfo.scale = scale
       console.log(scale)
       var translateValue = (autoScaleInfo.innerHeight - (autoScaleInfo.deviseH * scale)) / 2
       for (var index = 0; index < boxList.length; index++) {
@@ -295,4 +302,9 @@ function autoScale(config) {
   }
   autoScaleInfo = config
   getScale()
+}
+
+
+if (window.autoScaleOnLoad) {
+  window.autoScaleOnLoad()
 }

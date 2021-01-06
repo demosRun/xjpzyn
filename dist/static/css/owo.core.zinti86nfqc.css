@@ -231,11 +231,11 @@ li {
   width: 400px;
   height: 850px;
   position: absolute;
-  left: 0;
-  right: -24%;
+  left: 1000px;
   top: 0;
   bottom: 0;
   margin: auto;
+  z-index: 9;
 }
 
 .page2 .reci-box li {
@@ -243,10 +243,123 @@ li {
   line-height: 60px;
   font-size: 26px;
   text-align: center;
+  transition: all 0.3s;
+}
+
+.page2 .reci-box li.active {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.page2 .reci-item-box {
+  mix-blend-mode: color-dodge;
+  cursor: none;
+}
+
+.page2 .tujie-box {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  left: 1000px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 9;
+}
+
+.page2 .tujie-box .left-button {
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  right: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  transform: rotate(180deg);
+  fill: #c9cacb;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.page2 .tujie-box .right-button {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  right: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  fill: #c9cacb;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.page2 .tujie-box .button:hover svg {
+  fill: #084d98;
+}
+
+.page2 .swiper-wrapper a {
+  display: block;
+}
+
+.page2 .swiper-wrapper .left {
+  width: 308px;
+}
+
+.page2 .swiper-wrapper .left img {
+  display: block;
+}
+
+.page2 .swiper-wrapper .right {
+  width: 400px;
+}
+
+.page2 .swiper-slide {
+  width: 100%;
+}
+
+.page2 .swiper-slide .right h1 {
+  color: #091e40;
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.page2 .swiper-slide .right .line {
+  height: 4px;
+  width: 60px;
+  background-color: #3984f3;
+  margin-bottom: 20px;
+}
+
+.page2 .swiper-slide .right .text-box {
+  font-size: 18px;
+  line-height: 26px;
+  text-indent: 2em;
+}
+
+.page2 .swiper-slide .right .text-box p {
+  margin-bottom: 5px;
+}
+
+.page2 .swiper-slide .right .button {
+  background-color: #084d98;
+  color: white;
+  width: 100px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.page2 .swiper-slide .right .button a {
+  display: block;
+  color: white;
 }
 .show-ani {
   position: fixed;
-  left: -93%;
+  left: 0;
   right: 0;
   width: 50px;
   height: 50px;
@@ -256,5 +369,22 @@ li {
   background-color: white;
   z-index: 999;
   border-radius: 1000px;
+  opacity: 0;
+}
+
+/* 动画效果 */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
 }
 

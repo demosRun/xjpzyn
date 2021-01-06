@@ -1,11 +1,16 @@
 <template lang="pug">
 .home
-  .so.so-0
+  .so.so-0.no-pc
     img.so.so-1.menu-item(src="@|277.png|" o-tap="changePage(2)")
     img.so.so-2.menu-item(src="@|275.png|" o-tap="changePage(1)")
     img.so.so-3.menu-item(src="@|276.png|" o-tap="changePage(0)")
     img.so.so-4.menu-item(src="@|278.png|")
   .scale-box
+    .so.so-0.no-phone
+      img.so.so-1.menu-item(src="@|277.png|" o-tap="changePage(2)")
+      img.so.so-2.menu-item(src="@|275.png|" o-tap="changePage(1)")
+      img.so.so-3.menu-item(src="@|276.png|" o-tap="changePage(0)")
+      img.so.so-4.menu-item(src="@|278.png|")
     img.so.so-5(src="@|274.png|")
     img.so.so-6(src="@|273.png|")
     img.so.so-7(src="@|272.png|")
@@ -15,8 +20,12 @@
 
 <script>
   module.exports = {
+    created: function () {
+      owo.animate('zoomIn', this.query('.so-8'), 500)
+    },
     changePage: function (index) {
       index = parseInt(index)
+      const showAni = document.querySelector('.show-ani')
       switch (index) {
         case 0:
           owo.script.page2.changeShuju()
@@ -30,11 +39,14 @@
         default:
           break;
       }
-      document.querySelector('.show-ani').classList.add('page-ani')
+      
+      showAni.classList.add('page-ani')
       setTimeout(() => {
         owo.go('page2')
       }, 600);
-      
+      setTimeout(() => {
+        showAni.classList.remove('page-ani')
+      }, 1500);
     }
   }
 </script>
@@ -100,4 +112,5 @@
 .menu-item {
   cursor: pointer;
 }
+
 </style>
