@@ -26,20 +26,21 @@
     changePage: function (index) {
       index = parseInt(index)
       const showAni = document.querySelector('.show-ani')
-      switch (index) {
-        case 0:
-          owo.script.page2.changeShuju()
-          break;
-        case 1:
-          owo.script.page2.changeTujie()
-          break;
-        case 2:
-          owo.script.page2.changeReci()
-          break;
-        default:
-          break;
-      }
-      
+      setTimeout(() => {
+        switch (index) {
+          case 0:
+            owo.script.page2.changeShuju()
+            break;
+          case 1:
+            owo.script.page2.changeTujie()
+            break;
+          case 2:
+            owo.script.page2.changeReci()
+            break;
+          default:
+            break;
+        }
+      }, 600);
       showAni.classList.add('page-ani')
       setTimeout(() => {
         owo.go('page2')

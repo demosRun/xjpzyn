@@ -19,7 +19,7 @@
   <meta name="catalogs" content="{TAG_83943_TAG}" />
 
   <!-- 页面主样式文件 -->
-  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.core.zinti86nfqc.css">
+  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.core.fn581qscn9a.css">
 
   <!-- 附属css文件 -->
   <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
@@ -68,6 +68,7 @@
         <div class="shuju-box show-box">
           <div id="chart"></div>
           <img src="./static/resource/shuju-zhou.png">
+          <div class="bottom-line"></div>
         </div>
         <div class="reci-box show-box">
           <div class="shape"></div>
@@ -155,7 +156,7 @@
   </div>
 
   <!-- 框架script文件 -->
-  <script src="./static/js/owo.core.zinti86nfqc.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/owo.core.fn581qscn9a.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript" charset="UTF-8">
     owo.script = {
       "page": {
@@ -165,24 +166,24 @@
         "changePage": function changePage(index) {
           index = parseInt(index);
           var showAni = document.querySelector('.show-ani');
+          setTimeout(function() {
+            switch (index) {
+              case 0:
+                owo.script.page2.changeShuju();
+                break;
 
-          switch (index) {
-            case 0:
-              owo.script.page2.changeShuju();
-              break;
+              case 1:
+                owo.script.page2.changeTujie();
+                break;
 
-            case 1:
-              owo.script.page2.changeTujie();
-              break;
+              case 2:
+                owo.script.page2.changeReci();
+                break;
 
-            case 2:
-              owo.script.page2.changeReci();
-              break;
-
-            default:
-              break;
-          }
-
+              default:
+                break;
+            }
+          }, 600);
           showAni.classList.add('page-ani');
           setTimeout(function() {
             owo.go('page2');
@@ -230,16 +231,18 @@
           });
         },
         "changeReci": function changeReci(e) {
-          this.clear();
-          owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550-2.png');
+          this.clear(); // owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550-2.png')
+
+          this.query('.so-6').src = './static/resource/550-2.png';
           this.query('.so-3').classList.add('active');
           this.query('.reci-box').style.display = 'block';
           this.query('.biaoqing-show').style.display = 'block';
         },
         "changeTujie": function changeTujie(e) {
           this.clear();
-          this.query('.so-4').classList.add('active');
-          owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550.png');
+          this.query('.so-4').classList.add('active'); // owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550.png')
+
+          this.query('.so-6').src = './static/resource/550.png';
           this.query('.tujie-box').style.display = 'block';
           this.query('.biaoqing-show').style.display = 'none';
 
@@ -260,8 +263,9 @@
           var _this = this;
 
           this.clear();
-          this.query('.so-5').classList.add('active');
-          owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550-3.png');
+          this.query('.so-5').classList.add('active'); // owo.tool.fadeChangeImage(this.query('.so-6'), './static/resource/550-3.png')
+
+          this.query('.so-6').src = './static/resource/550-3.png';
           this.query('.shuju-box').style.display = 'block';
           this.query('.biaoqing-show').style.display = 'none';
 
@@ -273,7 +277,7 @@
                 series: [{
                   name: '访问来源',
                   type: 'pie',
-                  radius: ['50%', '70%'],
+                  radius: ['60%', '90%'],
                   avoidLabelOverlap: false,
                   label: {
                     show: false,
@@ -282,7 +286,7 @@
                   emphasis: {
                     label: {
                       show: true,
-                      fontSize: '30',
+                      fontSize: '24',
                       fontWeight: 'bold'
                     }
                   },
@@ -296,43 +300,43 @@
                       color: '#b7e0cb'
                     }
                   }, {
-                    value: 310,
+                    value: 335,
                     name: '2020年习近平考察调研过这些地方',
                     itemStyle: {
                       color: '#5abad1'
                     }
                   }, {
-                    value: 234,
+                    value: 335,
                     name: '2020年中央全面深化改革委员会会议探讨这些大事',
                     itemStyle: {
                       color: '#3984b6'
                     }
                   }, {
-                    value: 135,
+                    value: 335,
                     name: '瞄准“十四五”2020年习近平召开这些座谈会问计于民',
                     itemStyle: {
                       color: '#264992'
                     }
                   }, {
-                    value: 1548,
+                    value: 335,
                     name: '2020年中央财经委员会会议',
                     itemStyle: {
                       color: '#172063'
                     }
                   }, {
-                    value: 1548,
+                    value: 335,
                     name: '2020年党外人士座谈会谈过哪些重要内容',
                     itemStyle: {
                       color: '#dfeece'
                     }
                   }, {
-                    value: 1548,
+                    value: 335,
                     name: '2020年习近平指示批示这些重要事件',
                     itemStyle: {
                       color: '#95d3d3'
                     }
                   }, {
-                    value: 1548,
+                    value: 335,
                     name: '2020年习近平给这些人回过信',
                     itemStyle: {
                       color: '#469dc5'
@@ -342,7 +346,7 @@
               };
 
               _this.data.chart.setOption(option);
-            }, 1000); // 默认高亮
+            }, 200); // 默认高亮
 
             var index = 0; // 高亮索引
             // this.data.chart.dispatchAction({

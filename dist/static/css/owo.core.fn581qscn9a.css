@@ -357,6 +357,11 @@ li {
   display: block;
   color: white;
 }
+
+.page2 .bottom-line {
+  width: 935px;
+  height: 216px;
+}
 .show-ani {
   position: fixed;
   left: 0;

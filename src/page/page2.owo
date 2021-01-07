@@ -15,6 +15,7 @@
     .shuju-box.show-box
       #chart
       img(src="@|shuju-zhou.png|")
+      .bottom-line
     .reci-box.show-box
       //- .cursor
       .shape
@@ -110,7 +111,8 @@ module.exports = {
   },
   changeReci: function (e) {
     this.clear()
-    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-2.png|')
+    // owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-2.png|')
+    this.query('.so-6').src = '@|550-2.png|'
     this.query('.so-3').classList.add('active')
     this.query('.reci-box').style.display = 'block'
     this.query('.biaoqing-show').style.display = 'block'
@@ -118,7 +120,8 @@ module.exports = {
   changeTujie: function (e) {
     this.clear()
     this.query('.so-4').classList.add('active')
-    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550.png|')
+    // owo.tool.fadeChangeImage(this.query('.so-6'), '@|550.png|')
+    this.query('.so-6').src = '@|550.png|'
     this.query('.tujie-box').style.display = 'block'
     this.query('.biaoqing-show').style.display = 'none'
     if (!this.data.mySwiper) {
@@ -137,12 +140,11 @@ module.exports = {
   changeShuju: function (e) {
     this.clear()
     this.query('.so-5').classList.add('active')
-    owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-3.png|')
+    // owo.tool.fadeChangeImage(this.query('.so-6'), '@|550-3.png|')
+    this.query('.so-6').src = '@|550-3.png|'
     this.query('.shuju-box').style.display = 'block'
     this.query('.biaoqing-show').style.display = 'none'
     if (!this.data.chart) {
-      
-
       // 使用刚指定的配置项和数据显示图表。
       setTimeout(() => {
         this.data.chart = echarts.init(document.getElementById('chart'))
@@ -151,7 +153,7 @@ module.exports = {
             {
               name: '访问来源',
               type: 'pie',
-              radius: ['50%', '70%'],
+              radius: ['60%', '90%'],
               avoidLabelOverlap: false,
               label: {
                 show: false,
@@ -160,7 +162,7 @@ module.exports = {
               emphasis: {
                 label: {
                   show: true,
-                  fontSize: '30',
+                  fontSize: '24',
                   fontWeight: 'bold'
                 }
               },
@@ -169,19 +171,19 @@ module.exports = {
               },
               data: [
                 {value: 335, name: '中央政治局会议', itemStyle: {color: '#b7e0cb'}},
-                {value: 310, name: '2020年习近平考察调研过这些地方', itemStyle: {color: '#5abad1'}},
-                {value: 234, name: '2020年中央全面深化改革委员会会议探讨这些大事', itemStyle: {color: '#3984b6'}},
-                {value: 135, name: '瞄准“十四五”2020年习近平召开这些座谈会问计于民', itemStyle: {color: '#264992'}},
-                {value: 1548, name: '2020年中央财经委员会会议', itemStyle: {color: '#172063'}},
-                {value: 1548, name: '2020年党外人士座谈会谈过哪些重要内容', itemStyle: {color: '#dfeece'}},
-                {value: 1548, name: '2020年习近平指示批示这些重要事件', itemStyle: {color: '#95d3d3'}},
-                {value: 1548, name: '2020年习近平给这些人回过信', itemStyle: {color: '#469dc5'}},
+                {value: 335, name: '2020年习近平考察调研过这些地方', itemStyle: {color: '#5abad1'}},
+                {value: 335, name: '2020年中央全面深化改革委员会会议探讨这些大事', itemStyle: {color: '#3984b6'}},
+                {value: 335, name: '瞄准“十四五”2020年习近平召开这些座谈会问计于民', itemStyle: {color: '#264992'}},
+                {value: 335, name: '2020年中央财经委员会会议', itemStyle: {color: '#172063'}},
+                {value: 335, name: '2020年党外人士座谈会谈过哪些重要内容', itemStyle: {color: '#dfeece'}},
+                {value: 335, name: '2020年习近平指示批示这些重要事件', itemStyle: {color: '#95d3d3'}},
+                {value: 335, name: '2020年习近平给这些人回过信', itemStyle: {color: '#469dc5'}},
               ]
             }
           ]
         };
         this.data.chart.setOption(option);
-      }, 1000);
+      }, 200);
       
       // 默认高亮
       let index = 0; // 高亮索引
@@ -415,5 +417,9 @@ module.exports = {
       }
     }
   }
+}
+.bottom-line {
+  width: 935px;
+  height: 216px;
 }
 </style>
