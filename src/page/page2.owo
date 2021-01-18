@@ -33,14 +33,14 @@
           a(href="#") 2020年党外人士座谈会谈过哪些重要内容
         .so.so-zhou-9(o-hover="grow")
           a(href="#") 中央政治局会议
-        img.so.so-zhou-10(src="@|zhou-467.png|")
-        img.so.so-zhou-11(src="@|zhou-465.png|")
-        img.so.so-zhou-12(src="@|zhou-463.png|")
-        img.so.so-zhou-13(src="@|zhou-468.png|")
-        img.so.so-zhou-14(src="@|zhou-466.png|")
-        img.so.so-zhou-15(src="@|zhou-464.png|")
-        img.so.so-zhou-16(src="@|zhou-462.png|")
-        img.so.so-zhou-17(src="@|zhou-461.png|")
+        span.so.so-text-1(style="font-size: 18px;color: #000000;") 2020年习近平指示<br>批示这些重要事件
+        span.so.so-text-2(style="font-size: 18px;color: #000000;") 2020年中央财经<br>委员会会议 
+        span.so.so-text-3(style="font-size: 18px;color: #000000;") 2020年中央全面深化<br>改革委员会会议探讨<br>这些大事
+        span.so.so-text-4(style="font-size: 18px;color: #000000;") 2020年习近平<br>给这些人回过信
+        span.so.so-text-5(style="font-size: 18px;color: #000000;") 2020年党外人士<br>座谈会谈过哪些<br>重要内容
+        span.so.so-text-6(style="font-size: 18px;color: #000000;") 瞄准“十四五”<br>2020年习近平<br>召开这些座谈会<br>问计于民
+        span.so.so-text-7(style="font-size: 18px;color: #000000;") 2020年习近平考察<br>调研过这些地方 
+        span.so.so-text-8(style="font-size: 18px;color: #000000;") 中央政治局会议
         img.so.so-zhou-18(src="@|zhou-460.png|")
       .bottom-line
     .reci-box.show-box
@@ -337,15 +337,15 @@ module.exports = {
 }
 .reci-box {
   display: block;
-  width: 400px;
+  width: 650px;
   height: 880px;
   position: absolute;
-  left: 1000px;
+  left: 870px;
   top: 0;
   bottom: 0;
   margin: auto;
   z-index: 9;
-  outline:none;
+  outline: none;
   li {
     color: #2f598b;
     line-height: 52px;
@@ -537,45 +537,52 @@ module.exports = {
   z-index: -9;
   background-image: url('@|zhou-449.png|');
 }
-.so-zhou-10 {
+.so-text-0 {
+  left: 901px;
+  top: 702px;
+  width: 935px;
+  height: 216px;
+  z-index: 0;;
+}
+.so-text-1 {
   left: 676px;
   top: 162px;
-  z-index: -10;
+  z-index: -1;
 }
-.so-zhou-11 {
+.so-text-2 {
   left: 460px;
   top: 161px;
-  z-index: -11;
+  z-index: -2;
 }
-.so-zhou-12 {
+.so-text-3 {
   left: 210px;
   top: 161px;
-  z-index: -12;
+  z-index: -3;
 }
-.so-zhou-13 {
+.so-text-4 {
   left: 800px;
   top: 38px;
-  z-index: -13;
+  z-index: -4;
 }
-.so-zhou-14 {
+.so-text-5 {
   left: 585px;
   top: 19px;
-  z-index: -14;
+  z-index: -5;
 }
-.so-zhou-15 {
+.so-text-6 {
   left: 352px;
   top: 0px;
-  z-index: -15;
+  z-index: -6;
 }
-.so-zhou-16 {
+.so-text-7 {
   left: 115px;
   top: 37px;
-  z-index: -16;
+  z-index: -7;
 }
-.so-zhou-17 {
+.so-text-8 {
   left: 0px;
   top: 161px;
-  z-index: -17;
+  z-index: -8;
 }
 .so-zhou-18 {
   left: 12px;

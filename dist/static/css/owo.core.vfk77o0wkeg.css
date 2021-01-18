@@ -63,7 +63,9 @@ li {
 
 .home .so-0 {
   left: 0px;
-  top: 296px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   width: 120px;
   height: 358px;
   z-index: 3;
@@ -94,8 +96,8 @@ li {
 }
 
 .home .so-5 {
-  left: 992px;
-  top: 580px;
+  left: 1026px;
+  top: 539px;
   z-index: -2;
 }
 
@@ -109,11 +111,16 @@ li {
   left: 0px;
   top: 0px;
   z-index: -4;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .home .so-8 {
-  left: 943px;
-  top: 190px;
+  left: 1030px;
+  top: 153px;
   z-index: 0;
 }
 
@@ -123,16 +130,20 @@ li {
 
 .home .main-text {
   position: absolute;
-  left: 28%;
+  left: 33%;
   right: 0;
   margin: auto;
-  width: 680px;
-  top: 65%;
+  width: 730px;
+  top: 60%;
   text-indent: 2em;
-  font-size: 24px;
-  line-height: 41px;
+  font-size: 26px;
+  line-height: 45px;
   color: #063a75;
-  font-weight: bold;
+  font-family: 'Microsoft YaHei';
+}
+
+.home .menu {
+  transform-origin: 0 center;
 }[o-hover="grow"] {
   display: inline-block;
   vertical-align: middle;
@@ -253,10 +264,10 @@ li {
 
 .page2 .reci-box {
   display: block;
-  width: 400px;
+  width: 650px;
   height: 880px;
   position: absolute;
-  left: 1000px;
+  left: 870px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -479,52 +490,60 @@ li {
   background-image: url('../resource/zhou-449.png');
 }
 
-.page2 .so-zhou-10 {
+.page2 .so-text-0 {
+  left: 901px;
+  top: 702px;
+  width: 935px;
+  height: 216px;
+  z-index: 0;
+}
+
+.page2 .so-text-1 {
   left: 676px;
   top: 162px;
-  z-index: -10;
+  z-index: -1;
 }
 
-.page2 .so-zhou-11 {
+.page2 .so-text-2 {
   left: 460px;
   top: 161px;
-  z-index: -11;
+  z-index: -2;
 }
 
-.page2 .so-zhou-12 {
+.page2 .so-text-3 {
   left: 210px;
   top: 161px;
-  z-index: -12;
+  z-index: -3;
 }
 
-.page2 .so-zhou-13 {
+.page2 .so-text-4 {
   left: 800px;
   top: 38px;
-  z-index: -13;
+  z-index: -4;
 }
 
-.page2 .so-zhou-14 {
+.page2 .so-text-5 {
   left: 585px;
   top: 19px;
-  z-index: -14;
+  z-index: -5;
 }
 
-.page2 .so-zhou-15 {
+.page2 .so-text-6 {
   left: 352px;
   top: 0px;
-  z-index: -15;
+  z-index: -6;
 }
 
-.page2 .so-zhou-16 {
+.page2 .so-text-7 {
   left: 115px;
   top: 37px;
-  z-index: -16;
+  z-index: -7;
 }
 
-.page2 .so-zhou-17 {
+.page2 .so-text-8 {
   left: 0px;
   top: 161px;
-  z-index: -17;
+  z-index: -8;
 }
 
 .page2 .so-zhou-18 {

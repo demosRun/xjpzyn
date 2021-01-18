@@ -1,16 +1,11 @@
 <template lang="pug">
 .home
-  .so.so-0.no-pc
+  .so.so-0.menu
     img.so.so-1.menu-item(src="@|277.png|" o-tap="changePage(2)")
     img.so.so-2.menu-item(src="@|275.png|" o-tap="changePage(1)")
     img.so.so-3.menu-item(src="@|276.png|" o-tap="changePage(0)")
     img.so.so-4.menu-item(src="@|278.png|")
   .scale-box
-    .so.so-0.no-phone
-      img.so.so-1.menu-item(src="@|277.png|" o-tap="changePage(2)")
-      img.so.so-2.menu-item(src="@|275.png|" o-tap="changePage(1)")
-      img.so.so-3.menu-item(src="@|276.png|" o-tap="changePage(0)")
-      img.so.so-4.menu-item(src="@|278.png|")
     img.so.so-5(src="@|274.png|")
     //- img.so.so-6(src="@|273.png|")
     img.so.so-7(src="@|272.png|")
@@ -68,10 +63,12 @@
 }
 .so-0 {
   left: 0px;
-  top: 296px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   width: 120px;
   height: 358px;
-  z-index: 3;;
+  z-index: 3;
 }
 .so-1 {
   left: 31px;
@@ -94,8 +91,8 @@
   z-index: -1;
 }
 .so-5 {
-  left: 992px;
-  top: 580px;
+  left: 1026px;
+  top: 539px;
   z-index: -2;
 }
 .so-6 {
@@ -107,10 +104,12 @@
   left: 0px;
   top: 0px;
   z-index: -4;
+  user-select: none;
+  pointer-events: none;
 }
 .so-8 {
-  left: 943px;
-  top: 190px;
+  left: 1030px;
+  top: 153px;
   z-index: 0;
 }
 .menu-item {
@@ -118,15 +117,18 @@
 }
 .main-text {
   position: absolute;
-  left: 28%;
+  left: 33%;
   right: 0;
   margin: auto;
-  width: 680px;
-  top: 65%;
+  width: 730px;
+  top: 60%;
   text-indent: 2em;
-  font-size: 24px;
-  line-height: 41px;
+  font-size: 26px;
+  line-height: 45px;
   color: #063a75;
-  font-weight: bold;
+  font-family: 'Microsoft YaHei';
+}
+.menu {
+  transform-origin: 0 center;
 }
 </style>

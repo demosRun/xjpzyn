@@ -1,7 +1,7 @@
 window.autoScaleOnLoad = function () {
   console.log(window.innerWidth / window.innerHeight)
   if ((window.innerWidth / window.innerHeight) < 1) {
-    document.getElementsByClassName('no-pc')[0].style.display = 'none'
+    document.getElementsByClassName('menu')[0].style.transform = 'scale(0.5, 0.5)'
     
     console.log('竖屏')
     autoScale({
@@ -31,7 +31,7 @@ window.autoScaleOnLoad = function () {
       rotate: true
     })
   } else {
-    document.getElementsByClassName('no-phone')[0].style.display = 'none'
+    // document.getElementsByClassName('no-phone')[0].style.display = 'none'
     autoScale({
       // 设计宽度PC
       deviseW: 1920,
