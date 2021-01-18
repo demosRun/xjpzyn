@@ -12,9 +12,12 @@
       img.so.so-3.menu-item(src="@|276.png|" o-tap="changePage(0)")
       img.so.so-4.menu-item(src="@|278.png|")
     img.so.so-5(src="@|274.png|")
-    img.so.so-6(src="@|273.png|")
+    //- img.so.so-6(src="@|273.png|")
     img.so.so-7(src="@|272.png|")
     img.so.so-8(src="@|270.png|")
+    .main-text
+      p 2020年是极不寻常的一年，以习近平同志为核心的党中央团结带领全国各族人民战疫情、抗洪峰，化危机、应变局，经受风雨洗礼，新中国站上新的时间节点。
+      p 回望这一年，习近平总书记夙夜在公，不辞劳苦，统筹国内国际两个大局，谋大局、抓重点，观大势、定大计，察民情、促民生。人民网·中国共产党新闻网推出年终报道，为您梳理习近平总书记的这一年。
 
 </template>
 
@@ -92,7 +95,7 @@
 }
 .so-5 {
   left: 992px;
-  top: 691px;
+  top: 580px;
   z-index: -2;
 }
 .so-6 {
@@ -107,11 +110,23 @@
 }
 .so-8 {
   left: 943px;
-  top: 273px;
+  top: 190px;
   z-index: 0;
 }
 .menu-item {
   cursor: pointer;
 }
-
+.main-text {
+  position: absolute;
+  left: 28%;
+  right: 0;
+  margin: auto;
+  width: 680px;
+  top: 65%;
+  text-indent: 2em;
+  font-size: 24px;
+  line-height: 41px;
+  color: #063a75;
+  font-weight: bold;
+}
 </style>

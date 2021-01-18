@@ -10,44 +10,75 @@
       .menu-item.so.so-5(o-tap="changeShuju()")
     img.so.so-6(src="@|550.png|")
     .biaoqing-show
-      img.biaoqing(src="@|biaoqing.png|")
+      img.biaoqing(src="@|12.gif|")
       img.tuoyuan(src="@|tuoyuan.png|")
     .shuju-box.show-box
       #chart
-      img(src="@|shuju-zhou.png|")
+      .so.so-zhou-0
+        .so.so-zhou-1(o-hover="grow")
+          a(href="#") 2020年习近平给这些人回过信
+        .so.so-zhou-2(o-hover="grow")
+          a(href="#") 2020年习近平指示批示这些重要事件
+        .so.so-zhou-3(o-hover="grow")
+          a(href="#") 2020年党外人士座谈会谈过哪些重要内容
+        .so.so-zhou-4(o-hover="grow")
+          a(href="#") 2020年中央财经委员会会议 
+        .so.so-zhou-5(o-hover="grow")
+          a(href="#") 瞄准“十四五”2020年习近平召开这些座谈会问计于民
+        .so.so-zhou-6(o-hover="grow")
+          a(href="#") 2020年中央全面深化改革委员会会议探讨这些大事
+        .so.so-zhou-7(o-hover="grow")
+          a(href="#") 2020年习近平考察调研过这些地方 
+        .so.so-zhou-8(o-hover="grow")
+          a(href="#") 2020年党外人士座谈会谈过哪些重要内容
+        .so.so-zhou-9(o-hover="grow")
+          a(href="#") 中央政治局会议
+        img.so.so-zhou-10(src="@|zhou-467.png|")
+        img.so.so-zhou-11(src="@|zhou-465.png|")
+        img.so.so-zhou-12(src="@|zhou-463.png|")
+        img.so.so-zhou-13(src="@|zhou-468.png|")
+        img.so.so-zhou-14(src="@|zhou-466.png|")
+        img.so.so-zhou-15(src="@|zhou-464.png|")
+        img.so.so-zhou-16(src="@|zhou-462.png|")
+        img.so.so-zhou-17(src="@|zhou-461.png|")
+        img.so.so-zhou-18(src="@|zhou-460.png|")
       .bottom-line
     .reci-box.show-box
       //- .cursor
-      .shape
+      //- .shape
       .reci-item-box
-        li
-          span 只争朝夕 不负韶华
-        li
+        li.active(o-mouseenter="changeImg('@|1.gif|')")
+          span 征途漫漫 惟有奋斗
+        li(o-mouseenter="changeImg('@|2.gif|')")
           span 人民至上
-        li
-          span 听党指挥跟党走
-        li
-          span 坚定不移听党话 矢志不渝跟党走
-        li
+        li(o-mouseenter="changeImg('@|3.gif|')")
+          span 每个人都了不起
+        li(o-mouseenter="changeImg('@|4.gif|')")
           span 集中力量办好自己的事
-        li
-          span 光荣属于劳动者 幸福属于劳动者
-        li
-          span 勇当新时代的“拓荒牛”
-        li
-          span 钉钉子精神
-        li
-          span 学以养德 学以增智 学以致用
-        li
-          span 守土有责 守土担责 守土尽责
-        li
+        li(o-mouseenter="changeImg('@|5.gif|')")
+          span 幸福属于劳动者
+        li(o-mouseenter="changeImg('@|6.gif|')")
+          span 民族要复兴 乡村要振兴
+        li(o-mouseenter="changeImg('@|7.gif|')")
+          span 为民服务孺子牛 创新发展拓荒牛 艰苦奋斗老黄牛
+        li(o-mouseenter="changeImg('@|8.gif|')")
           span 当好人民群众贴心人
-        li
+        li(o-mouseenter="changeImg('@|9.gif|')")
+          span 钉钉子精神
+        li(o-mouseenter="changeImg('@|10.gif|')")
           span 绿水青山就是金山银山
-        li
+        li(o-mouseenter="changeImg('@|11.gif|')")
           span 初心如磐 使命在肩
-        li
+        li(o-mouseenter="changeImg('@|12.gif|')")
+          span 只争朝夕 不负韶华
+        li(o-mouseenter="changeImg('@|13.gif|')")
           span 厉行节约 反对浪费
+        li(o-mouseenter="changeImg('@|14.gif|')")
+          span 全面检视 靶向治疗
+        li(o-mouseenter="changeImg('@|15.gif|')")
+          span 练就过硬本领
+        li(o-mouseenter="changeImg('@|16.gif|')")
+          span 时间属于奋进者
     .tujie-box.show-box
       .left-button.button(o-tap="prev")
         <svg t="1609918008631" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2694" width="40" height="40"><path d="M621.24800001 877.248l320-320c24.992051-24.992051 24.992051-65.504051 0-90.496l-320-320c-24.992051-24.992051-65.504051-24.992051-90.496 0-24.992051 24.992051-24.992051 65.504051 0 90.496l210.75199999 210.75199999-613.504 1e-8c-35.36005101 0-64 28.640051-64 64 0 35.36005101 28.640051 64 64 64l613.504 1e-8-210.75199999 210.75199999c-12.48 12.512051-18.752 28.864-18.75200001 45.248s6.240051 32.768 18.75200001 45.248c24.992051 24.992051 65.504051 24.992051 90.496 0z" p-id="2695"></path></svg>
@@ -84,21 +115,21 @@ module.exports = {
         this.classList.add('active')
       }
     });
-    document.querySelector('.reci-item-box').addEventListener("mousemove", evt => {
-      const mouseX = evt.clientX;
-      const mouseY = evt.clientY;
+    // document.querySelector('.reci-item-box').addEventListener("mousemove", evt => {
+    //   const mouseX = evt.clientX;
+    //   const mouseY = evt.clientY;
     
-      // gsap.set(".cursor", {
-      //   x: mouseX,
-      //   y: mouseY });
+    //   // gsap.set(".cursor", {
+    //   //   x: mouseX,
+    //   //   y: mouseY });
     
     
-      gsap.to(".shape", {
-        x: (mouseX - (autoScaleInfo.innerWidth * 0.55))  / autoScaleInfo.scale ,
-        y: (mouseY - (autoScaleInfo.innerHeight * 0.13)) / autoScaleInfo.scale ,
-        stagger: -0.1 });
+    //   gsap.to(".shape", {
+    //     x: (mouseX - (autoScaleInfo.innerWidth * 0.55))  / autoScaleInfo.scale ,
+    //     y: (mouseY - (autoScaleInfo.innerHeight * 0.13)) / autoScaleInfo.scale ,
+    //     stagger: -0.1 });
     
-    });
+    // });
   },
   clear: function () {
     console.log('清理')
@@ -210,6 +241,9 @@ module.exports = {
       //   });
       // });
     }
+  },
+  changeImg: function (imgSrc) {
+    this.query('.biaoqing').src = imgSrc
   }
 }
 </script>
@@ -304,19 +338,21 @@ module.exports = {
 .reci-box {
   display: block;
   width: 400px;
-  height: 850px;
+  height: 880px;
   position: absolute;
   left: 1000px;
   top: 0;
   bottom: 0;
   margin: auto;
   z-index: 9;
+  outline:none;
   li {
     color: #2f598b;
-    line-height: 60px;
-    font-size: 26px;
+    line-height: 52px;
+    font-size: 24px;
     text-align: center;
     transition: all 0.3s;
+    outline:none;
   }
   li.active {
     font-weight: bold;
@@ -325,7 +361,9 @@ module.exports = {
 }
 .reci-item-box {
   mix-blend-mode: color-dodge;
-  cursor: none;
+  cursor: pointer;
+  outline:none;
+  // cursor: none;
 }
 .tujie-box {
   width: 800px;
@@ -421,5 +459,127 @@ module.exports = {
 .bottom-line {
   width: 935px;
   height: 216px;
+}
+.so-zhou-0 {
+  width: 935px;
+  height: 216px;
+  z-index: 0;
+  position: relative;
+  a {
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+.so-zhou-1 {
+  left: 837px;
+  top: 99px;
+  width: 41px;
+  height: 40px;
+  background-image: url('@|zhou-457.png|');
+}
+.so-zhou-2 {
+  left: 722px;
+  top: 99px;
+  width: 42px;
+  height: 40px;
+  background-image: url('@|zhou-456.png|');
+}
+.so-zhou-3 {
+  left: 608px;
+  top: 99px;
+  width: 41px;
+  height: 40px;
+  background-image: url('@|zhou-455.png|');
+}
+.so-zhou-4 {
+  left: 494px;
+  top: 99px;
+  width: 42px;
+  height: 40px;
+  background-image: url('@|zhou-454.png|');
+}
+.so-zhou-5 {
+  left: 379px;
+  top: 99px;
+  width: 42px;
+  height: 40px;
+  background-image: url('@|zhou-453.png|');
+}
+.so-zhou-6 {
+  left: 266px;
+  top: 99px;
+  width: 41px;
+  height: 40px;
+  background-image: url('@|zhou-451.png|');
+}
+.so-zhou-7 {
+  left: 151px;
+  top: 99px;
+  width: 42px;
+  height: 40px;
+  background-image: url('@|zhou-450.png|');
+}
+.so-zhou-8 {
+  left: 602px;
+  top: 92px;
+  width: 54px;
+  height: 53px;
+  cursor: pointer;
+  background-image: url('@|zhou-469.png|');
+}
+.so-zhou-9 {
+  left: 37px;
+  top: 99px;
+  width: 41px;
+  height: 40px;
+  z-index: -9;
+  background-image: url('@|zhou-449.png|');
+}
+.so-zhou-10 {
+  left: 676px;
+  top: 162px;
+  z-index: -10;
+}
+.so-zhou-11 {
+  left: 460px;
+  top: 161px;
+  z-index: -11;
+}
+.so-zhou-12 {
+  left: 210px;
+  top: 161px;
+  z-index: -12;
+}
+.so-zhou-13 {
+  left: 800px;
+  top: 38px;
+  z-index: -13;
+}
+.so-zhou-14 {
+  left: 585px;
+  top: 19px;
+  z-index: -14;
+}
+.so-zhou-15 {
+  left: 352px;
+  top: 0px;
+  z-index: -15;
+}
+.so-zhou-16 {
+  left: 115px;
+  top: 37px;
+  z-index: -16;
+}
+.so-zhou-17 {
+  left: 0px;
+  top: 161px;
+  z-index: -17;
+}
+.so-zhou-18 {
+  left: 12px;
+  top: 117px;
+  z-index: -18;
 }
 </style>

@@ -130,7 +130,9 @@ h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, bu
   pointer-events: none;
   z-index: 10000;
 }
-
+* {
+  -webkit-tap-highlight-color:transparent;
+}
 ::-moz-selection {
   color: #fff;
   background: #2128bd;
@@ -174,6 +176,7 @@ h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, bu
   bottom: 0;
   margin: auto;
   z-index: 99;
+  width: 350px;
 }
 
 .swiper-container {
